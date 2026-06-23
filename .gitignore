@@ -1,0 +1,26 @@
+# Secrets — never commit
+.env
+*.pem
+*.key
+
+# Database
+db.sqlite3
+db.sqlite3-journal
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Django
+staticfiles/
+/media/
+
+# Tooling / IDE
+.pytest_cache/
+.coverage
+htmlcov/
+.idea/
+.vscode/

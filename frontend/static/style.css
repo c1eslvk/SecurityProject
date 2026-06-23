@@ -1,0 +1,32 @@
+:root { --bg:#0f1419; --card:#1a2129; --fg:#e6e6e6; --muted:#8a96a3; --accent:#4f9cff; --err:#ff6b6b; --danger:#d9544f; }
+* { box-sizing: border-box; }
+body { margin:0; font:16px/1.5 system-ui, sans-serif; background:var(--bg); color:var(--fg); }
+
+nav { display:flex; align-items:center; gap:1rem; padding:.75rem 1.25rem; background:#141b22; border-bottom:1px solid #2a323c; }
+nav .brand { font-weight:700; color:var(--accent); }
+nav a { color:var(--fg); text-decoration:none; padding:.3rem .6rem; border-radius:6px; }
+nav a:hover { background:#222c36; }
+nav .spacer { flex:1; }
+#whoami { color:var(--muted); font-size:.9rem; }
+
+main { max-width:880px; margin:1.5rem auto; padding:0 1rem; display:grid; gap:1rem; }
+#auth-view { display:grid; gap:1rem; grid-template-columns:1fr 1fr; }
+@media (max-width:640px) { #auth-view { grid-template-columns:1fr; } }
+
+.card { background:var(--card); border:1px solid #2a323c; border-radius:10px; padding:1rem 1.25rem; }
+h2 { margin-top:0; font-size:1rem; color:var(--accent); }
+label { display:block; margin:.5rem 0; font-size:.9rem; color:var(--muted); }
+input { width:100%; padding:.5rem; margin-top:.2rem; background:#0d1218; border:1px solid #2a323c; border-radius:6px; color:var(--fg); }
+button { background:var(--accent); color:#fff; border:0; border-radius:6px; padding:.45rem .9rem; cursor:pointer; margin:.2rem .3rem .2rem 0; font-size:.85rem; }
+button:hover { filter:brightness(1.1); }
+button.danger { background:var(--danger); }
+.hint { color:var(--muted); font-size:.8rem; }
+.flash { padding:.6rem 1rem; border-radius:6px; background:#13351f; border:1px solid #1f5c34; }
+.flash.error { background:#3a1518; border-color:#5c1f24; color:var(--err); }
+.hidden { display:none !important; }
+
+table { width:100%; border-collapse:collapse; }
+th, td { text-align:left; padding:.45rem; border-bottom:1px solid #2a323c; font-size:.85rem; vertical-align:top; }
+td label { display:inline-flex; gap:.2rem; align-items:center; margin:.1rem .5rem .1rem 0; color:var(--fg); }
+td label input { width:auto; }
+code { background:#0d1218; padding:.3rem .5rem; border-radius:4px; display:inline-block; word-break:break-all; }

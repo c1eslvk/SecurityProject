@@ -1,0 +1,10 @@
+# Pinned dependencies. Run `pip-audit -r requirements.txt` to check for CVEs.
+Django==5.1.15
+djangorestframework==3.15.2
+djangorestframework-simplejwt==5.5.1
+argon2-cffi==23.1.0
+django-csp==3.8
+python-dotenv==1.2.2
+
+# Dev / security tooling
+pip-audit==2.7.3

@@ -1,0 +1,74 @@
+{% load static %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RBAC Demo</title>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<nav id="navbar" class="hidden">
+  <span class="brand">RBAC Demo</span>
+  <a href="#" data-page="home">Home</a>
+  <a href="#" data-page="user" data-perm="accounts.access_user_page">User</a>
+  <a href="#" data-page="manager" data-perm="accounts.access_manager_page">Manager</a>
+  <a href="#" data-page="admin" data-perm="accounts.access_admin_page">Admin</a>
+  <span class="spacer"></span>
+  <span id="whoami"></span>
+  <button id="logout-btn" type="button">Log out</button>
+</nav>
+
+<main>
+  <p id="flash" class="flash hidden" role="status"></p>
+
+  <!-- ---------- Logged out ---------- -->
+  <section id="auth-view">
+    <div class="card">
+      <h2>Log in</h2>
+      <form id="login-form" autocomplete="off">
+        <label>Username <input name="username" required></label>
+        <label>Password <input name="password" type="password" required></label>
+        <button type="submit">Log in</button>
+      </form>
+    </div>
+    <div class="card">
+      <h2>Create account</h2>
+      <form id="register-form" autocomplete="off">
+        <label>Username <input name="username" required></label>
+        <label>Email <input name="email" type="email" required></label>
+        <label>Password (min 12 chars) <input name="password" type="password" required></label>
+        <button type="submit">Register</button>
+      </form>
+      <p class="hint">New accounts have no roles until an Admin grants one.</p>
+    </div>
+  </section>
+
+  <!-- ---------- Home ---------- -->
+  <section id="home-view" class="page hidden">
+    <div class="card">
+      <h2>Home</h2>
+      <p>Signed in as <strong id="home-username"></strong>.</p>
+      <p>Your roles: <strong id="home-roles"></strong></p>
+    </div>
+  </section>
+
+  <!-- ---------- User ---------- -->
+  <section id="user-view" class="page hidden">
+    <div class="card"><h2>User page</h2><p id="user-msg"></p></div>
+  </section>
+
+  <!-- ---------- Manager ---------- -->
+  <section id="manager-view" class="page hidden">
+    <div class="card"><h2>Manager page</h2><p id="manager-msg"></p></div>
+  </section>
+
+  <!-- ---------- Admin ---------- -->
+  <section id="admin-view" class="page hidden">
+    <div class="card">
+      <h2>Admin page — all users</h2>
+      <table id="users-table">
+        <thead><tr><th>ID</th><th>Username</th><th>Roles</th><th>Actions</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script src="{% static 'app.js' %}"></script>
