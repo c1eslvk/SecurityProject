@@ -1,6 +1,6 @@
 # System autoryzacji RBAC
 
-Mała aplikacja webowa, której sednem jest **warstwa bezpieczeństwa**: pokazuje
+Webowy system autoryzacji, którego sednem jest **warstwa bezpieczeństwa**: pokazuje
 ścisłą, egzekwowaną po stronie serwera kontrolę dostępu opartą na rolach (RBAC)
 na bazie Django + Django REST Framework, z uwierzytelnianiem JWT w ciasteczkach
 HttpOnly, logowaniem zdarzeń i prostym interfejsem z paskiem nawigacji oraz
